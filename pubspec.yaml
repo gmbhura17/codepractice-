@@ -37,9 +37,21 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_launcher_icons:
+  flutter_image_slider: ^0.0.2
   http: ^0.13.5
   shared_preferences: ^2.1.2
   fluttertoast: ^8.2.2
+  firebase_auth:
+  google_sign_in:
+  firebase_core:
+  firebase_messaging:
+  flutter_local_notifications:
+  file_picker:
+  font_awesome_flutter:
+  firebase_storage:
+  cloud_firestore:
+  image_picker:
+
 #  flutter_launcher_name:
 #  google_fonts: ^5.1.0
 dev_dependencies:
@@ -48,7 +60,7 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "img/logo.png"
+  image_path: "img/flut4.jpg"
 #flutter_launcher_name:
   #name: "APIpractice"
 
@@ -69,7 +81,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  assets:
+    - img/
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

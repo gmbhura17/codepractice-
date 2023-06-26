@@ -1,8 +1,6 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
 import 'Functions/Containers.dart';
 
 class FakeApi extends StatefulWidget {
@@ -45,7 +43,8 @@ class _FakeApiState extends State<FakeApi> {
       appBar: AppBar(
         title: Text("Fake APi's"),
       ),
-      body: FutureBuilder(
+      body:
+      FutureBuilder(
         future: alldata,
         builder: (context,snapshots)
         {
@@ -72,7 +71,7 @@ class _FakeApiState extends State<FakeApi> {
                         Text(snapshots.data![index]["price"].toString(),),
                         Column(
                           children: [
-                            homeScreenContainer(const Color(0xFFE2F5FF), "img/gro_strabery.png",snapshots.data![index]["name"].toString()),
+                            Container1(const Color(0xFFE2F5FF), "img/gro_strabery.png",snapshots.data![index]["name"].toString()),
                           ],
                         )
 

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-homeScreenContainer(Color? myColor,String? myImage,String? productName){
+Container1(Color? myColor,String? myImage,String? productName){
   return
     Column(
       children: [
@@ -9,21 +9,27 @@ homeScreenContainer(Color? myColor,String? myImage,String? productName){
           onTap: (){
 
           },
-          child: Container(
-            width: 29,
-            height: 13,
-            decoration:  BoxDecoration(
-                color: myColor,
-                borderRadius: const BorderRadius.all(Radius.circular(12))
+          child: Card(
+            shadowColor: Colors.blueAccent,
+            child: Container(
+              width: 120,
+              height: 100,
+              decoration:  BoxDecoration(
+                  color: myColor,
+                  borderRadius: const BorderRadius.all(Radius.circular(12))
+              ),
+              child:
+               Image.asset("img/flut13.png"),
+               // Image.asset(myImage!)
+
             ),
-            child: Image.asset("img/flut13.png"),
           ),
         ),
         Text(productName!,style: const TextStyle(fontSize: 13,color: Colors.black),),
       ],
     );
 }
-homeScreenListContainer(BuildContext context, String? myImage,String? newPText,String? oldPText,String? text1,String? text2,){
+Container2(BuildContext context, String? myImage,String? newPText,String? oldPText,String? text1,String? text2,){
   return
     Padding(
       padding: const EdgeInsets.all(12.0),
