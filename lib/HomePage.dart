@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:codepractice/Api/InsertPage.dart';
 import 'package:codepractice/Api/ViewPage.dart';
+import 'package:codepractice/Auth/GoogleAuthPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -19,12 +20,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  //------ google auth ------------
   FirebaseAuth auth = FirebaseAuth.instance;
   var displayName="";
   var email="";
   var photoURL="";
   var uid="";
 
+  //----------- Api -----------------
   Future<List>? alldata;
 //https://jsonplaceholder.typicode.com/todos/1
   Future<List> getdata() async
@@ -58,6 +62,8 @@ class _HomePageState extends State<HomePage> {
 
 
       appBar: AppBar(
+
+        // -------------------- Log-out (Alert Dialog --------------------------------
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -218,6 +224,8 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
 
+             // --------------------------------- Gooogle Auth ------------------------------
+
 
               Column(
                 children: [
@@ -276,7 +284,7 @@ class _HomePageState extends State<HomePage> {
                                   });
                                   Navigator.of(context).pop();
                                   Navigator.of(context).push(
-                                      MaterialPageRoute(builder: (context) => ViewPage())
+                                      MaterialPageRoute(builder: (context) => GoogleAuthPage())
                                   );
 
                                 }
@@ -285,11 +293,12 @@ class _HomePageState extends State<HomePage> {
                                   prefs.setString("senderid", documents.docs.first.id.toString());
                                   Navigator.of(context).pop();
                                   Navigator.of(context).push(
-                                      MaterialPageRoute(builder: (context) => ViewPage())
+                                      MaterialPageRoute(builder: (context) => GoogleAuthPage())
                                   );
 
                                 }
-                              });
+                              }
+                              );
 
                             }
                           },
